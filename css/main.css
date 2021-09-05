@@ -1,0 +1,368 @@
+*{
+  margin: 0px;
+  padding: 0px;
+}
+ul{
+  list-style: none;
+}
+a{
+  text-decoration: none;
+}
+
+/* header */
+header #line-above{
+  height:80px;
+  /* margin-bottom: -10px; */
+  display:flex;
+  flex-wrap: wrap;
+  justify-content: space-between; 
+  align-items: flex-end;
+}
+header .header-item{
+  margin-bottom: 8px;
+}
+header  h4{
+  font-family: Lora;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 30px;
+  line-height: 130%;
+  /* identical to box height, or 39px */
+
+  margin-left:3.3%;
+  display: flex;
+  align-items: center;
+  text-align: center;
+  font-feature-settings: 'pnum' on, 'lnum' on, 'ss04' on, 'ss03' on, 'liga' off;
+  color: #000000;
+}
+header  a{
+  font-family: Lora;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 24px;
+  display: flex;
+  align-items: center;
+  text-align: center;
+  font-feature-settings: 'pnum' on, 'lnum' on, 'ss04' on, 'ss03' on, 'liga' off;
+  color: #000000;
+}
+#line-above img{
+  margin-right:59px;
+  margin-bottom: 5px;
+}
+#line{
+  margin-right:40px;
+  margin-left:40px;
+  display:flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  height:1px;
+}
+#line > img{
+  width:100%;
+  object-fit: fill;
+}
+#main-body{
+  width:100%;
+  display: flex;
+  flex-direction: row;
+}
+/* left section*/
+#left-control-tab{
+  width:30%;
+  margin: 60px 48px 72px 48px;
+  display: flex;
+}
+#tab-border{
+  width: 472px;
+  padding: 16px;
+  background: #FFFFFF;
+  border: 0.5px solid #055688;
+  box-sizing: border-box;
+  border-radius: 4px;
+}
+.tabs{
+  display: flex;
+  flex-direction: row;
+}
+.tabs > span{
+  font-family: Lato;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 18px;
+  line-height: 135%;
+  /* or 24px */
+
+}
+#selected-tab{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 212px;
+  height: 44px;
+  background: #055688;
+  border: 0.4px solid #055688;
+  box-sizing: border-box;
+  border-radius: 4px;
+}
+#selected-tab > span{
+  text-align: center;
+  font-feature-settings: 'pnum' on, 'lnum' on, 'ss03' on, 'liga' off;
+  color: #FFFFFF;
+}
+.unselected-tab{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 130px;
+  height: 44px;
+  border: 0.4px solid #055688;
+  box-sizing: border-box;
+  border-radius: 4px;
+}
+.unselected-tab > span{
+  font-feature-settings: 'pnum' on, 'lnum' on, 'ss03' on, 'liga' off;
+  color: #888888;
+}
+.info{
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  padding: 0px;
+}
+.info-span-div{
+  display:flex;
+  flex-direction: column;
+  align-items: flex-start;
+  padding: 0px;
+}
+.info-span-div> .info-subtitle{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  padding: 0px;
+  flex: none;
+  order: 0;
+  flex-grow: 0;
+  margin: 0px 0px;
+}
+.info-span-div > .info-subtitle >span{
+  font-family: Inter;
+  font-style: normal;
+  font-weight: 600;
+  font-size: 10px;
+  line-height: 175%;
+  /* identical to box height, or 17px */
+  text-transform: uppercase;
+  /* Blue Gray / 500 */
+  color: #64748B;
+}
+.info-span-div > .info-subtitle > .first-subtitle{
+  /* Inside Auto Layout */
+  flex: none;
+  order: 0;
+  flex-grow: 0;
+  margin-right:8px;
+}
+.info-span-div > .info-subtitle > .dot{
+  /* Inside Auto Layout */
+  flex: none;
+  order: 1;
+  flex-grow: 0;
+}
+.info-span-div > .info-subtitle > .second-subtitle{
+  /* Inside Auto Layout */
+  flex: none;
+  order: 2;
+  flex-grow: 0;
+  margin: 0px 8px;
+}
+
+.info-span-div .info-title{
+  font-family: Inter;
+  font-style: normal;
+  font-weight: 600;
+  font-size: 20px;
+  line-height: 175%;
+  /* identical to box height, or 35px */
+  font-feature-settings: 'pnum' on, 'lnum' on, 'ss03' on, 'liga' off;
+
+  /* Blue Gray / 700 */
+  color: #334155;
+
+  /* Inside Auto Layout */
+  flex: none;
+  order: 1;
+  align-self: stretch;
+  flex-grow: 0;
+  margin: 0px 0px;
+}
+.info-p>p{
+  font-family: Lora;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 12px;
+  line-height: 175%;  
+  /* or 21px */
+  font-feature-settings: 'pnum' on, 'lnum' on, 'ss03' on, 'liga' off;
+
+  /* Blue Gray / 500 */
+  color: #64748B;
+  mix-blend-mode: normal;
+}
+.modelsetting1{
+  display:flex;
+  flex-direction: column;
+  align-items: flex-start;
+  padding: 0px;
+  margin-top:37px;
+}
+.modelsetting2{
+  display:flex;
+  flex-direction: column;
+  align-items: flex-start;
+  padding: 0px;
+  margin-top:12px;
+}
+.setting-title{
+  font-family: Inter;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 15px;
+  line-height: 175%;
+  /* or 26px */
+
+  font-feature-settings: 'pnum' on, 'lnum' on;
+  color: #055688;
+}
+.setting-component{
+  display: flex;
+  flex-direction: column;
+  font-family: Lora;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 12px;
+  line-height: 175%;
+  /* identical to box height, or 21px */
+
+  font-feature-settings: 'pnum' on, 'lnum' on;
+  color: #64748B;
+}
+.expression{
+  display: flex;
+  justify-content: center;
+  margin-top: 12px;
+  margin-bottom: 12px;
+  align-items: center;
+}
+.constant-graph{
+  display: flex;
+  justify-content: center;
+  margin-top:12px;
+}
+
+/*right section*/
+#right-container{
+  /* width:808px; */
+  wid
+  padding-left:44px;
+  margin: 60px 48px 72px 48px; 
+  display: flex;
+  flex-direction: column;
+}
+.graph-title{
+  display: flex;
+  flex-direction: row;
+  height:60px;
+  align-items: center;
+}
+.graph-title #graph-title{
+  margin-left:12px;
+  font-family: Inter;
+  font-style: normal;
+  font-weight: 600;
+  font-size: 26px;
+  line-height: 135%;
+  /* or 35px */
+  font-feature-settings: 'pnum' on, 'lnum' on, 'ss03' on, 'liga' off;
+
+  /* Blue Gray / 700 */
+  color: #334155;
+}
+.graph-images{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin-top: 18px;
+}
+.graph-images > .graph-name {
+  font-family: Lora;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 20px;
+  line-height: 175%;
+
+  /* identical to box height, or 35px */
+  font-feature-settings: 'pnum' on, 'lnum' on, 'ss03' on, 'liga' off;
+
+  margin: 10px 8px;
+}
+
+.under-line{
+  display:flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  height:1px;
+  margin-top:50px;
+}
+.under-line >img{
+  width:100%;
+  object-fit: fill;
+}
+.references{
+  margin-top:20px;
+  display: flex;
+  flex-direction: row;
+}
+.ref-container{
+  display: flex;
+  flex-direction: column;
+}
+.ref-title{
+  font-family: Inter;
+  font-style: normal;
+  font-weight: 600;
+  font-size: 18px;
+  line-height: 175%;
+  /* identical to box height, or 31px */
+
+  font-feature-settings: 'pnum' on, 'lnum' on, 'ss03' on, 'liga' off;
+
+  /* Blue Gray / 700 */
+
+  color: #334155;
+}
+.ref-link{
+  font-family: Lora;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 13px;
+  line-height: 18px;
+  /* or 138% */
+  display: flex;
+  align-items: center;
+  letter-spacing: -0.01em;
+
+  /* Rectangle 3 */
+  color: #1C89B7;
+
+  /* Inside Auto Layout */
+  flex: none;
+  order: 0;
+  flex-grow: 0;
+  margin: 0px 10px;
+}
