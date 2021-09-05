@@ -34,6 +34,7 @@
 		<script src="./lib/d3-force-boundary.min.js" charset="utf-8"></script>
     <script src="./lib/jsgrid.min.js"></script>    
 
+    <script src="./javascripts/configurations.js"></script>
     <script src="./javascripts/cvolumer.js"></script> 
     <script src="./javascripts/edgeBundleView.js"></script>
     <script src="./javascripts/matrixView.js"></script>
@@ -44,14 +45,36 @@
 </head>
 
 <body>
-  <div id='jsGrid' style="display: flex; flex-direction: column;align-items: center;">  </div>
+
+<div>
+  <label for="ResultSelect">결과폴더:</label>
+  <select id="selectfolder" name="sfolder" >
+    <option value='./dataroot/1234567/result.json'>PET</option>
+    <option value='./dataroot/2345678/result.json'>fMRI</option>     
+  </select>
+</div>  
   <div id='Result' style="display: flex; flex-direction: column;align-items: center;"></div>
-  <div id='Volume' style="display: flex; flex-direction: column;align-items: center;"></div>
+
   
 <script>
 
-report_parse('./result/result.json')
-
+function deleteChild(id) {
+      let e;
+      if (typeof id === 'string' || id instanceof String) e = document.getElementById(id);      
+      else e=id; 
+      var child = e.lastElementChild; 
+      while (child) {
+        e.removeChild(child);
+        child = e.lastElementChild;
+      }
+    }
+ let obj=document.getElementById('selectfolder')
+  obj.onchange=() => {
+    deleteChild("Result");
+    report_parse(document.getElementById("selectfolder").value);
+  }
+//report_parse('./dataroot/2345678/result.json')
+//report_parse('./dataroot/1234567/result.json')
 </script>
 
 </body>

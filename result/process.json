@@ -1,1 +1,0 @@
-{"modality":"fMRI","process":"basic","analysis":[{"stats":{"type":"alff"},"region_type":"voxel","space":"template","labels":[]},{"stats":{"type":"corr"},"region_type":"ROI","space":"template","labels":"default"}],"TR":2}

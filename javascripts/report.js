@@ -43,7 +43,15 @@ function linkData(data,options) {
 }
 
 ///**************///
-function draw_result_grid(id,rlt){ 
+function draw_result_grid(id,rlt,fields=null){ 
+  if(fields==null) fields=[
+    { name: "title", title: "이름",type: "number", width: 50, validate: "required" },
+    { name: "type", title: "유형",type: "text", width: 20 ,validate: "required"},
+    { name: "subtype", title: "세부유형",type: "text", width: 20 },
+    { name: "info", title: "요약",type: "text", width: 50 },
+    { name: "date", title: "일시",type: "text", width: 50 },
+    { name: "visualize", title: "보기", type: "checkbox", width:15,sorting: false }
+  ];
   $(`#${id}`).jsGrid({
       width: "100%",
       height: "400px",
@@ -53,14 +61,7 @@ function draw_result_grid(id,rlt){
       sorting: true,
       paging: true,
       data: rlt,
-      fields: [
-          { name: "title", title: "이름",type: "number", width: 50, validate: "required" },
-          { name: "type", title: "유형",type: "text", width: 20 ,validate: "required"},
-          { name: "subtype", title: "세부유형",type: "text", width: 20 },
-          { name: "info", title: "요약",type: "text", width: 50 },
-          { name: "date", title: "일시",type: "text", width: 50 },
-          { name: "visualize", title: "보기", type: "checkbox", width:15,sorting: false }
-      ],
+      fields: fields,
       rowClick: function(args) {
           console.log(args.item + " is clicked");
       },
@@ -116,7 +117,9 @@ async function report_parse(rltjson){
       await rpt_process_vol(list[l]);
     } else if(list[l].type=='FC') {
       await rpt_process_graph(list[l]);
-    } 
+    } else if(list[l].type=='LIST') {
+      await rpt_process_list(list[l]);
+    }  
   }
 }
 function rpt_list(rltjson){
@@ -126,6 +129,24 @@ function rpt_list(rltjson){
   }).then(data => { //그리드 그리기
     let obj=addObject(`#LIST:${rltjson}`,'result-list','width:600px;',`${description}`)    
     draw_result_grid(obj.id,data);
+    return data;
+  });
+}
+function rpt_process_list(robj){
+  let fields=[
+    { name: "name", title: "이름",type: "text", width: 10, validate: "required" },
+    { name: "fullname", title: "전체이름",type: "text", width: 20 ,validate: "required"},
+    { name: "gI", title: "평균값",type: "number", width: 10 },
+    { name: "Z", title: "Z 값",type: "number", width: 10 }
+  ];
+
+  return fetch(robj.filename).then(response => { //json file
+    return response.json();
+  }).then(data => { //그리드 그리기
+    let description='<br>';
+    if(robj.description.length) description=`<p>${robj.description}</p><br>`;
+    let obj=addObject(`${robj.title}:${data[2].labelname}`,`${robj.title}`,'width:300px;',`${description}`)    
+    draw_result_grid(obj.id,data[2].labels,fields);
     return data;
   });
 }

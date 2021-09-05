@@ -1,0 +1,42 @@
+[
+    {
+        "filename": "dataroot/1234567/data/w1234567-MR.nii",
+        "title": "sMRI",
+        "type": "VOL",
+        "subtype": "MRI",
+        "reference": "",
+        "info": "MRI file",
+        "date":"20210830 12:20:00",
+        "description":"본 분석에 사용된 정규화된 MRI 파일입니다."
+    },
+    {
+        "filename": "dataroot/1234567/data/sw1234567-PET.nii",
+        "title": "NormalizedPET",
+        "type": "VOL",
+        "subtype": "PET",
+        "reference": "dataroot/1234567/data/w1234567-MR.nii",
+        "info": "PET file",
+        "date":"20210830 12:20:00",
+        "description":"<p>정규화된 PET 결과 파일입니다.</p><br>"
+    },
+    {
+        "filename": "dataroot/1234567/data/z_sw1234567-PET.nii",
+        "title": "Z-scoredPET",
+        "type": "VOL",
+        "subtype": "STAT",
+        "reference": "dataroot/1234567/data/w1234567-MR.nii",
+        "info": "Z-score file",
+        "date":"20210830 12:20:00",
+        "description":"<p>통계 z-score 분석 결과 파일입니다.</p><br>"
+    },
+    {
+        "filename": "dataroot/1234567/data/stat_sw1234567-PET.json",
+        "title": "ROI-Z-score",
+        "type": "LIST",
+        "subtype": "LIST",
+        "reference": "",
+        "info": "activity",
+        "date":"20210830 12:20:00",
+        "description":"<p>다음은 <span style='color:green'>AAL 맵에 대한 활성도</span> 분석 결과 파일입니다.</p>"
+    }
+]

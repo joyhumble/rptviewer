@@ -1,0 +1,1 @@
+{"modality":"PET","process":"basic","analysis":[{"stats":{"type":"zscore"},"region_type":"voxel","space":"template","labels":[]},{"stats":{"type":"zscore"},"region_type":"ROI","space":"template","labels":"default"}]}
